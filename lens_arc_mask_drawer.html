@@ -355,7 +355,9 @@
         <span class="section-title">Mode</span>
         <button id="polygonModeBtn">Polygon Mask Mode</button>
         <button id="conjugateModeBtn">Conjugate Point Mode</button>
+        <button id="traceModeBtn">Trace Point Mode</button>
         <button id="clearConjugateBtn">Clear Conjugate Points</button>
+        <button id="clearTraceBtn">Clear Trace Points</button>
       </div>
 
       <div class="section">
@@ -376,6 +378,7 @@
           <button id="exportJsonBtn">Export Polygon JSON</button>
           <button id="exportFitsBtn" disabled>Export Mask FITS</button>
           <button id="exportConjugateBtn">Save Conjugate JSON</button>
+          <button id="exportTraceBtn">Save Trace JSON</button>
         </div>
       </div>
 
@@ -386,7 +389,9 @@
           <li>双击当前画布，或按 <span class="kbd">Enter</span>，闭合当前 polygon。</li>
           <li>按 <span class="kbd">Backspace</span> 撤回当前 polygon 的最后一个点。</li>
           <li>切换到 <code>Conjugate Point Mode</code> 后，单击图像会记录一个共轭点坐标。</li>
+          <li>切换到 <code>Trace Point Mode</code> 后，单击图像会记录一个 trace point，并用数字编号显示。</li>
           <li><code>Save Conjugate JSON</code> 会优先打开浏览器保存对话框，方便你直接保存到 <code>preprocessed</code> 目录。</li>
+          <li><code>Save Trace JSON</code> 会导出 trace point 的 display/FITS 两套坐标，文件名以 <code>_trace_points.json</code> 结尾。</li>
           <li>如果加载的是 FITS，导出的 mask FITS 会和当前显示的图像尺寸一致，并会自动做回 y 轴翻转，保证和原始 FITS 像素网格对齐。</li>
         </ul>
       </div>
@@ -439,7 +444,9 @@
     const fitViewBtn = document.getElementById("fitViewBtn");
     const polygonModeBtn = document.getElementById("polygonModeBtn");
     const conjugateModeBtn = document.getElementById("conjugateModeBtn");
+    const traceModeBtn = document.getElementById("traceModeBtn");
     const clearConjugateBtn = document.getElementById("clearConjugateBtn");
+    const clearTraceBtn = document.getElementById("clearTraceBtn");
     const histCanvas = document.getElementById("histCanvas");
     const histCtx = histCanvas.getContext("2d");
     const curveCanvas = document.getElementById("curveCanvas");
@@ -453,6 +460,7 @@
     const exportJsonBtn = document.getElementById("exportJsonBtn");
     const exportFitsBtn = document.getElementById("exportFitsBtn");
     const exportConjugateBtn = document.getElementById("exportConjugateBtn");
+    const exportTraceBtn = document.getElementById("exportTraceBtn");
     const statusBox = document.getElementById("status");
 
     const textDecoder = new TextDecoder("ascii");
@@ -470,6 +478,7 @@
       polygons: [],
       currentPolygon: [],
       conjugatePoints: [],
+      tracePoints: [],
       hoverPoint: null,
       fits: {
         hdus: [],
@@ -510,12 +519,19 @@
       drawScene();
     }
 
+    function resetTracePoints() {
+      state.tracePoints = [];
+      drawScene();
+    }
+
     function setMode(mode) {
-      state.mode = mode === "conjugate" ? "conjugate" : "polygon";
+      state.mode = ["polygon", "conjugate", "trace"].includes(mode) ? mode : "polygon";
       polygonModeBtn.style.borderColor = state.mode === "polygon" ? "rgba(89, 213, 216, 0.75)" : "";
       conjugateModeBtn.style.borderColor = state.mode === "conjugate" ? "rgba(89, 213, 216, 0.75)" : "";
+      traceModeBtn.style.borderColor = state.mode === "trace" ? "rgba(89, 213, 216, 0.75)" : "";
       polygonModeBtn.style.background = state.mode === "polygon" ? "#27404f" : "";
       conjugateModeBtn.style.background = state.mode === "conjugate" ? "#27404f" : "";
+      traceModeBtn.style.background = state.mode === "trace" ? "#27404f" : "";
       renderBaseImage();
       drawScene();
     }
@@ -862,7 +878,7 @@
         `Sample median: ${formatNumber(state.fits.sampleMedian)}\n` +
         `Percentile normalization: ${Number(state.stretch.lowPercentile).toFixed(1)}% → ${Number(state.stretch.highPercentile).toFixed(1)}%\n` +
         `HistogramTransformation: c0=${Number(state.stretch.shadows).toFixed(3)}, m=${Number(state.stretch.midtones).toFixed(3)}, c1=${Number(state.stretch.highlights).toFixed(3)}\n` +
-        `Saved polygons: ${state.polygons.length} | Current polygon points: ${state.currentPolygon.length} | Conjugate points: ${state.conjugatePoints.length}`
+        `Saved polygons: ${state.polygons.length} | Current polygon points: ${state.currentPolygon.length} | Conjugate points: ${state.conjugatePoints.length} | Trace points: ${state.tracePoints.length}`
       );
     }
 
@@ -877,7 +893,7 @@
         `Image size: ${baseCanvas.width} x ${baseCanvas.height}\n` +
         `Mode: ${state.mode}\n` +
         `Stretch controls are disabled for raster input.\n` +
-        `Saved polygons: ${state.polygons.length} | Current polygon points: ${state.currentPolygon.length} | Conjugate points: ${state.conjugatePoints.length}`
+        `Saved polygons: ${state.polygons.length} | Current polygon points: ${state.currentPolygon.length} | Conjugate points: ${state.conjugatePoints.length} | Trace points: ${state.tracePoints.length}`
       );
     }
 
@@ -1062,6 +1078,21 @@
         const size = 1 / Math.max(zoom, 1e-6);
         const half = size / 2;
         ctx.fillRect(point.x - half, point.y - half, size, size);
+      }
+      ctx.restore();
+
+      ctx.save();
+      ctx.fillStyle = "#7ae582";
+      ctx.strokeStyle = "#7ae582";
+      ctx.font = `${Math.max(8 / Math.max(zoom, 1e-6), 1)}px monospace`;
+      ctx.textAlign = "left";
+      ctx.textBaseline = "bottom";
+      for (let index = 0; index < state.tracePoints.length; index += 1) {
+        const point = state.tracePoints[index];
+        const size = 1 / Math.max(zoom, 1e-6);
+        const half = size / 2;
+        ctx.fillRect(point.x - half, point.y - half, size, size);
+        ctx.fillText(String(index + 1), point.x + 2 / Math.max(zoom, 1e-6), point.y - 2 / Math.max(zoom, 1e-6));
       }
       ctx.restore();
 
@@ -1283,6 +1314,29 @@
       };
     }
 
+    function getTracePointPayload() {
+      return {
+        sourceType: state.sourceType,
+        fileName: state.sourceFileName,
+        mode: "trace",
+        width: baseCanvas.width,
+        height: baseCanvas.height,
+        fitsDisplayOrigin: state.sourceType === "fits" ? "lower-left visualized in canvas" : null,
+        tracePointsDisplayCoordinates: state.tracePoints.map((point, index) => ({
+          id: index + 1,
+          x: point.x,
+          y: point.y
+        })),
+        tracePointsFitsCoordinates: state.sourceType === "fits"
+          ? state.tracePoints.map((point, index) => ({
+              id: index + 1,
+              x: point.x,
+              y: baseCanvas.height - point.y
+            }))
+          : null
+      };
+    }
+
     async function saveBlobWithPicker(blob, suggestedName) {
       if (window.showSaveFilePicker) {
         const handle = await window.showSaveFilePicker({
@@ -1320,6 +1374,24 @@
         updateStatus(`${statusBox.textContent}\nSaved conjugate points as ${savedName}`);
       } catch (error) {
         updateStatus(`Failed to save conjugate points:\n${error.message}`);
+      }
+    }
+
+    async function exportTracePointsJson() {
+      if (!state.hasImage) return;
+      if (!state.tracePoints.length) {
+        updateStatus("No trace points to export.");
+        return;
+      }
+      const payload = getTracePointPayload();
+      const blob = new Blob([JSON.stringify(payload, null, 2)], { type: "application/json" });
+      const suggestedName = `${(state.sourceFileName || "image").replace(/\.[^.]+$/i, "")}_trace_points.json`;
+      try {
+        const savedName = await saveBlobWithPicker(blob, suggestedName);
+        renderBaseImage();
+        updateStatus(`${statusBox.textContent}\nSaved trace points as ${savedName}`);
+      } catch (error) {
+        updateStatus(`Failed to save trace points:\n${error.message}`);
       }
     }
 
@@ -1420,8 +1492,13 @@
     resetStretchBtn.addEventListener("click", resetStretch);
     polygonModeBtn.addEventListener("click", () => setMode("polygon"));
     conjugateModeBtn.addEventListener("click", () => setMode("conjugate"));
+    traceModeBtn.addEventListener("click", () => setMode("trace"));
     clearConjugateBtn.addEventListener("click", () => {
       resetConjugatePoints();
+      renderBaseImage();
+    });
+    clearTraceBtn.addEventListener("click", () => {
+      resetTracePoints();
       renderBaseImage();
     });
     zoomSlider.addEventListener("input", () => {
@@ -1457,12 +1534,16 @@
     exportJsonBtn.addEventListener("click", exportPolygonsJson);
     exportFitsBtn.addEventListener("click", exportMaskFits);
     exportConjugateBtn.addEventListener("click", exportConjugatePointsJson);
+    exportTraceBtn.addEventListener("click", exportTracePointsJson);
 
     canvas.addEventListener("click", (event) => {
       if (!state.hasImage) return;
       const point = getCanvasPoint(event);
       if (state.mode === "conjugate") {
         state.conjugatePoints.push(point);
+        renderBaseImage();
+      } else if (state.mode === "trace") {
+        state.tracePoints.push(point);
         renderBaseImage();
       } else {
         state.currentPolygon.push(point);
@@ -1512,6 +1593,9 @@
         event.preventDefault();
         if (state.mode === "conjugate") {
           state.conjugatePoints.pop();
+          renderBaseImage();
+        } else if (state.mode === "trace") {
+          state.tracePoints.pop();
           renderBaseImage();
         } else {
           state.currentPolygon.pop();
