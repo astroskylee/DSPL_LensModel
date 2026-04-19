@@ -1,0 +1,115 @@
+{
+  "cutout_size": [
+    100,
+    100
+  ],
+  "psf_cutout_size": [
+    49,
+    49
+  ],
+  "pixel_grid_shape": 12,
+  "eta_prior": {
+    "low": 1.0,
+    "high": 2.0
+  },
+  "eta_parametric": 1.644915683741866,
+  "eta_pixelated": 1.6472023453499882,
+  "parametric_loss_final": 631353.9216499019,
+  "pixelated_loss_final": 529807.8115584058,
+  "reference_band": "f814w",
+  "conjugate_json_path": "/mnt/d/lensing/Herculens/DSPL_LensModel/preprocessed/prep_20260419_bgbox_psfsvi_v2_flat/f814w_lens_cutout_100x100_conjugate_points.json",
+  "conjugate_centroid_display_xy": [
+    51.25,
+    37.513950892857146
+  ],
+  "conjugate_centroid_model_f814_arcsec": [
+    0.06933499999999998,
+    -0.4748872656249997
+  ],
+  "bands": {
+    "f475w": {
+      "filter": "F475W",
+      "rms": 0.0041264806111375625,
+      "pixel_scale": 0.03961999999999997,
+      "science_center_pix": [
+        2063,
+        1151
+      ],
+      "background_box_center_pix": [
+        2063,
+        951
+      ],
+      "science_cutout_path": "/mnt/d/lensing/Herculens/DSPL_LensModel/preprocessed/prep_20260419_bgbox_psfsvi_v2_flat/f475w_lens_cutout_100x100.fits",
+      "source1_mask_cutout_path": "/mnt/d/lensing/Herculens/DSPL_LensModel/preprocessed/prep_20260419_bgbox_psfsvi_v2_flat/f814w_science_100x100_mask_inner.fits",
+      "source2_mask_cutout_path": "/mnt/d/lensing/Herculens/DSPL_LensModel/preprocessed/prep_20260419_bgbox_psfsvi_v2_flat/f475w_science_100x100_mask outer.fits",
+      "psf_cutout_path": "/mnt/d/lensing/Herculens/DSPL_LensModel/preprocessed/prep_20260419_bgbox_psfsvi_v2_flat/f475w_psf_model_svi.fits"
+    },
+    "f814w": {
+      "filter": "F814W",
+      "rms": 0.004453595749110992,
+      "pixel_scale": 0.03961999999999999,
+      "science_center_pix": [
+        2064,
+        1152
+      ],
+      "background_box_center_pix": [
+        2064,
+        952
+      ],
+      "science_cutout_path": "/mnt/d/lensing/Herculens/DSPL_LensModel/preprocessed/prep_20260419_bgbox_psfsvi_v2_flat/f814w_lens_cutout_100x100.fits",
+      "source1_mask_cutout_path": "/mnt/d/lensing/Herculens/DSPL_LensModel/preprocessed/prep_20260419_bgbox_psfsvi_v2_flat/f814w_science_100x100_mask_inner.fits",
+      "source2_mask_cutout_path": "/mnt/d/lensing/Herculens/DSPL_LensModel/preprocessed/prep_20260419_bgbox_psfsvi_v2_flat/f475w_science_100x100_mask outer.fits",
+      "psf_cutout_path": "/mnt/d/lensing/Herculens/DSPL_LensModel/preprocessed/prep_20260419_bgbox_psfsvi_v2_flat/f814w_psf_model_svi.fits"
+    }
+  },
+  "parametric_main_mass": {
+    "theta_E": 0.8564143270330073,
+    "gamma": 2.0329887550503964,
+    "q": 0.6252899876101962,
+    "gamma1": 0.02341868495660951,
+    "gamma2": -0.08908683250195248,
+    "bands": {
+      "f475w": {
+        "center_x": -0.020069280102769038,
+        "center_y": 0.024059587385789727,
+        "phi_rad": 0.20266053478726342,
+        "phi_deg": 11.611593317174396,
+        "source1_sis_center_x": 0.06933499999999998,
+        "source1_sis_center_y": -0.4748872656249998
+      },
+      "f814w": {
+        "center_x": -0.020069280102769038,
+        "center_y": 0.024059587385789727,
+        "phi_rad": 0.20266053478726342,
+        "phi_deg": 11.611593317174396,
+        "source1_sis_center_x": 0.06933499999999998,
+        "source1_sis_center_y": -0.4748872656249998
+      }
+    }
+  },
+  "pixelated_main_mass": {
+    "theta_E": 0.8605903100818866,
+    "gamma": 2.031001555438765,
+    "q": 0.6239137308906598,
+    "gamma1": 0.022686400597621253,
+    "gamma2": -0.08957084237000258,
+    "bands": {
+      "f475w": {
+        "center_x": -0.01807383088578074,
+        "center_y": 0.022066240349525035,
+        "phi_rad": 0.2103787390212455,
+        "phi_deg": 12.053813845201569,
+        "source1_sis_center_x": 0.0693349999998437,
+        "source1_sis_center_y": -0.4748872656250176
+      },
+      "f814w": {
+        "center_x": -0.01807383088576925,
+        "center_y": 0.02206624034951743,
+        "phi_rad": 0.2103787390215368,
+        "phi_deg": 12.05381384521826,
+        "source1_sis_center_x": 0.06933499999999998,
+        "source1_sis_center_y": -0.4748872656249997
+      }
+    }
+  }
+}

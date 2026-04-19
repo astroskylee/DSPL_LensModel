@@ -365,13 +365,16 @@ class Light:
         e_low=-0.2,
         e_high=0.2,
     ):
-        sigma_bins = jnp.logspace(jnp.log10(sigma_lims[0]), jnp.log10(sigma_lims[1]), n_gauss + 1)
+        sigma_low, sigma_high = sigma_lims
+        if sigma_low <= 0:
+            sigma_bins = jnp.linspace(sigma_low, sigma_high, n_gauss + 1)
+            sigma_dist = dist.Uniform(sigma_bins[:-1], sigma_bins[1:])
+        else:
+            sigma_bins = jnp.logspace(jnp.log10(sigma_low), jnp.log10(sigma_high), n_gauss + 1)
+            sigma_dist = dist.LogUniform(sigma_bins[:-1], sigma_bins[1:])
         with numpyro.plate(f'{plate_name} - [{n_gauss}]', n_gauss):
             amp_scale = numpyro.sample(f'A_{param_name}', dist.LogUniform(1e-5, 1e4))
-            sigma = numpyro.sample(
-                f'sigma_{param_name}',
-                dist.LogUniform(sigma_bins[:-1], sigma_bins[1:]),
-            )
+            sigma = numpyro.sample(f'sigma_{param_name}', sigma_dist)
             with numpyro.plate(f'{plate_name} vectors - [2]', 2):
                 ellipticity = numpyro.sample(
                     f'e_{param_name}',
