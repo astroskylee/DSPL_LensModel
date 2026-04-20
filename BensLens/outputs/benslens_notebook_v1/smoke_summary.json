@@ -22,8 +22,8 @@
       "high": 1
     },
     "gamma_shear_main": {
-      "low": -0.15,
-      "high": 0.15
+      "low": -0.5,
+      "high": 0.5
     },
     "center_main": {
       "low": -0.4,
@@ -35,17 +35,17 @@
     },
     "theta_E_source1": {
       "low": 0.0,
-      "high": 0.3
+      "high": 1
     },
     "eta": {
       "low": 1.0,
-      "high": 1.5
+      "high": 2
     }
   },
-  "eta_parametric": 1.3481084270456265,
-  "eta_pixelated": 1.3469308777632818,
-  "parametric_loss_final": 14814126.407387136,
-  "pixelated_loss_final": 13788226.273777265,
+  "eta_parametric": 1.4954438584191103,
+  "eta_pixelated": 1.3743224420110745,
+  "parametric_loss_final": -353845.00243664114,
+  "pixelated_loss_final": -363140.68993593164,
   "reference_band": "f814w",
   "trace_conjugate_groups": {
     "source1": [
@@ -60,7 +60,7 @@
   },
   "use_trace_point_conjugate_prior": false,
   "conjugate_prior_rate": 1000.0,
-  "conjugate_json_path": "/mnt/d/lensing/Herculens/DSPL_LensModel/BensLens/preprocessed/prep_20260420_benslens_v1/f475w_lens_cutout_220x220_conjugate_points.json",
+  "conjugate_json_path": "/users/tianli/LensModelling/DSPL_LensModel/BensLens/preprocessed/prep_20260420_benslens_v1/f475w_lens_cutout_220x220_conjugate_points.json",
   "trace_point_json_path": null,
   "conjugate_centroid_fits_xy": [
     122.17857142857143,
@@ -101,10 +101,10 @@
         2055,
         951
       ],
-      "science_cutout_path": "/mnt/d/lensing/Herculens/DSPL_LensModel/BensLens/preprocessed/prep_20260420_benslens_v1/f475w_lens_cutout_220x220.fits",
-      "source1_mask_cutout_path": "/mnt/d/lensing/Herculens/DSPL_LensModel/BensLens/preprocessed/prep_20260420_benslens_v1/f814w_lens_cutout_220x220_mask.fits",
-      "source2_mask_cutout_path": "/mnt/d/lensing/Herculens/DSPL_LensModel/BensLens/preprocessed/prep_20260420_benslens_v1/f475w_lens_cutout_220x220_mask.fits",
-      "psf_cutout_path": "/mnt/d/lensing/Herculens/DSPL_LensModel/BensLens/preprocessed/prep_20260420_benslens_v1/f475w_psf_model_svi.fits"
+      "science_cutout_path": "/users/tianli/LensModelling/DSPL_LensModel/BensLens/preprocessed/prep_20260420_benslens_v1/f475w_lens_cutout_220x220.fits",
+      "source1_mask_cutout_path": "/users/tianli/LensModelling/DSPL_LensModel/BensLens/preprocessed/prep_20260420_benslens_v1/f475w_lens_cutout_220x220_mask.fits",
+      "source2_mask_cutout_path": "/users/tianli/LensModelling/DSPL_LensModel/BensLens/preprocessed/prep_20260420_benslens_v1/f814w_lens_cutout_220x220_mask.fits",
+      "psf_cutout_path": "/users/tianli/LensModelling/DSPL_LensModel/BensLens/preprocessed/prep_20260420_benslens_v1/f475w_psf_model_svi.fits"
     },
     "f814w": {
       "filter": "F814W",
@@ -118,59 +118,59 @@
         2055,
         951
       ],
-      "science_cutout_path": "/mnt/d/lensing/Herculens/DSPL_LensModel/BensLens/preprocessed/prep_20260420_benslens_v1/f814w_lens_cutout_220x220.fits",
-      "source1_mask_cutout_path": "/mnt/d/lensing/Herculens/DSPL_LensModel/BensLens/preprocessed/prep_20260420_benslens_v1/f814w_lens_cutout_220x220_mask.fits",
-      "source2_mask_cutout_path": "/mnt/d/lensing/Herculens/DSPL_LensModel/BensLens/preprocessed/prep_20260420_benslens_v1/f475w_lens_cutout_220x220_mask.fits",
-      "psf_cutout_path": "/mnt/d/lensing/Herculens/DSPL_LensModel/BensLens/preprocessed/prep_20260420_benslens_v1/f814w_psf_model_svi.fits"
+      "science_cutout_path": "/users/tianli/LensModelling/DSPL_LensModel/BensLens/preprocessed/prep_20260420_benslens_v1/f814w_lens_cutout_220x220.fits",
+      "source1_mask_cutout_path": "/users/tianli/LensModelling/DSPL_LensModel/BensLens/preprocessed/prep_20260420_benslens_v1/f475w_lens_cutout_220x220_mask.fits",
+      "source2_mask_cutout_path": "/users/tianli/LensModelling/DSPL_LensModel/BensLens/preprocessed/prep_20260420_benslens_v1/f814w_lens_cutout_220x220_mask.fits",
+      "psf_cutout_path": "/users/tianli/LensModelling/DSPL_LensModel/BensLens/preprocessed/prep_20260420_benslens_v1/f814w_psf_model_svi.fits"
     }
   },
   "parametric_main_mass": {
-    "theta_E": 0.9062349215388013,
-    "gamma": 2.0630129976250893,
-    "q": 0.7633879572205957,
-    "gamma1": -0.0040501775717184385,
-    "gamma2": -0.06572671361036993,
+    "theta_E": 1.3249734253146228,
+    "gamma": 2.0229838752489937,
+    "q": 0.5018869978391317,
+    "gamma1": 0.05443350608779007,
+    "gamma2": 0.03767617511521193,
     "bands": {
       "f475w": {
-        "center_x": -0.030499801310643317,
-        "center_y": -0.00048745408748188373,
-        "phi_rad": 0.08762481281346873,
-        "phi_deg": 5.020531954835615,
-        "source1_sis_center_x": 0.4541879227067257,
-        "source1_sis_center_y": -0.2813361208648137
+        "center_x": 0.38967629633351847,
+        "center_y": -0.34923083813035055,
+        "phi_rad": 0.8139458300188728,
+        "phi_deg": 46.63566081235412,
+        "source1_sis_center_x": 0.39484748441417505,
+        "source1_sis_center_y": -0.37006683273950836
       },
       "f814w": {
-        "center_x": -0.020290936707926144,
-        "center_y": 0.00419907020274346,
-        "phi_rad": 0.08762498218170944,
-        "phi_deg": 5.020541658920991,
-        "source1_sis_center_x": 0.4643968348635783,
-        "source1_sis_center_y": -0.27664951452310804
+        "center_x": 0.39988521998583537,
+        "center_y": -0.3445442427225269,
+        "phi_rad": 0.8139459994143325,
+        "phi_deg": 46.63567051799903,
+        "source1_sis_center_x": 0.4050564115784784,
+        "source1_sis_center_y": -0.3653802364814735
       }
     }
   },
   "pixelated_main_mass": {
-    "theta_E": 0.9006985228561815,
-    "gamma": 2.0608440472907077,
-    "q": 0.7620026535261133,
-    "gamma1": -0.0048827698731016556,
-    "gamma2": -0.06639840487232877,
+    "theta_E": 1.3396803358038025,
+    "gamma": 1.8731192210440502,
+    "q": 0.5002492553540949,
+    "gamma1": 0.02584452794568426,
+    "gamma2": 0.03708428408533693,
     "bands": {
       "f475w": {
-        "center_x": -0.03271565823054851,
-        "center_y": -0.0027095377249282426,
-        "phi_rad": 0.0963215183537982,
-        "phi_deg": 5.518816477964534,
-        "source1_sis_center_x": 0.4508418145830978,
-        "source1_sis_center_y": -0.28299413414372937
+        "center_x": 0.38972539425012337,
+        "center_y": -0.40226306611673623,
+        "phi_rad": 0.9560190271252856,
+        "phi_deg": 54.77585538848184,
+        "source1_sis_center_x": 0.3863496704355607,
+        "source1_sis_center_y": -0.3974862710154473
       },
       "f814w": {
-        "center_x": -0.022506793251603874,
-        "center_y": 0.0019769861897516172,
-        "phi_rad": 0.09632168772298733,
-        "phi_deg": 5.518826182104251,
-        "source1_sis_center_x": 0.4610507270206672,
-        "source1_sis_center_y": -0.2783075283689175
+        "center_x": 0.3999343268816772,
+        "center_y": -0.3975764707070869,
+        "phi_rad": 0.9560191965116456,
+        "phi_deg": 54.77586509360537,
+        "source1_sis_center_x": 0.39655860224215433,
+        "source1_sis_center_y": -0.3927996761976149
       }
     }
   }
