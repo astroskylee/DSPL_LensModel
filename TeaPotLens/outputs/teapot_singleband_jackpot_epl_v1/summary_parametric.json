@@ -1,0 +1,17 @@
+{
+  "science_path": "/mnt/d/lensing/Herculens/DSPL_LensModel/preprocessed/prep_20260419_bgbox_psfsvi_v2_flat/f814w_lens_cutout_100x100.fits",
+  "mask_1_path": "/mnt/d/lensing/Herculens/DSPL_LensModel/preprocessed/prep_20260419_bgbox_psfsvi_v2_flat/f814w_science_100x100_mask_inner.fits",
+  "mask_2_path": "/mnt/d/lensing/Herculens/DSPL_LensModel/preprocessed/prep_20260419_bgbox_psfsvi_v2_flat/f475w_science_100x100_mask outer.fits",
+  "psf_path": "/mnt/d/lensing/Herculens/DSPL_LensModel/preprocessed/prep_20260419_bgbox_psfsvi_v2_flat/f814w_psf_model_svi.fits",
+  "background_box_path": "/mnt/d/lensing/Herculens/DSPL_LensModel/preprocessed/prep_20260419_bgbox_psfsvi_v2_flat/f814w_background_box_50x50.fits",
+  "conjugate_json_path": "/mnt/d/lensing/Herculens/DSPL_LensModel/preprocessed/prep_20260419_bgbox_psfsvi_v2_flat/f814w_lens_cutout_100x100_conjugate_points.json",
+  "pix_scale": 0.03961999999999999,
+  "exposure_time": 2300.0,
+  "rms": 0.004453595749110992,
+  "num_chains": 1,
+  "max_iterations": 10000,
+  "best_i": 0,
+  "final_parametric_loss": -36762.24727562814,
+  "eta": 1.295632044190397,
+  "RMS_fit": 0.005037588753137998
+}

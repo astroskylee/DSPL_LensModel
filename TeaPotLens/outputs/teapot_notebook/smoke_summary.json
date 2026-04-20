@@ -1,0 +1,115 @@
+{
+  "cutout_size": [
+    100,
+    100
+  ],
+  "psf_cutout_size": [
+    49,
+    49
+  ],
+  "pixel_grid_shape": 12,
+  "eta_prior": {
+    "low": 1.0,
+    "high": 2.0
+  },
+  "eta_parametric": 1.266608094165941,
+  "eta_pixelated": 1.2165957000912992,
+  "parametric_loss_final": -35512.38118407296,
+  "pixelated_loss_final": -60928.292330631055,
+  "reference_band": "f814w",
+  "conjugate_json_path": "/users/tianli/LensModelling/DSPL_LensModel/preprocessed/prep_20260419_bgbox_psfsvi_v2_flat/f814w_lens_cutout_100x100_conjugate_points.json",
+  "conjugate_centroid_display_xy": [
+    51.25,
+    37.513950892857146
+  ],
+  "conjugate_centroid_model_f814_arcsec": [
+    0.069335,
+    -0.47488726562499983
+  ],
+  "bands": {
+    "f475w": {
+      "filter": "F475W",
+      "rms": 0.0041264806111375625,
+      "pixel_scale": 0.03961999999999997,
+      "science_center_pix": [
+        2063,
+        1151
+      ],
+      "background_box_center_pix": [
+        2063,
+        951
+      ],
+      "science_cutout_path": "/users/tianli/LensModelling/DSPL_LensModel/preprocessed/prep_20260419_bgbox_psfsvi_v2_flat/f475w_lens_cutout_100x100.fits",
+      "source1_mask_cutout_path": "/users/tianli/LensModelling/DSPL_LensModel/preprocessed/prep_20260419_bgbox_psfsvi_v2_flat/f814w_science_100x100_mask_inner.fits",
+      "source2_mask_cutout_path": "/users/tianli/LensModelling/DSPL_LensModel/preprocessed/prep_20260419_bgbox_psfsvi_v2_flat/f475w_science_100x100_mask outer.fits",
+      "psf_cutout_path": "/users/tianli/LensModelling/DSPL_LensModel/preprocessed/prep_20260419_bgbox_psfsvi_v2_flat/f475w_psf_model_svi.fits"
+    },
+    "f814w": {
+      "filter": "F814W",
+      "rms": 0.004453595749110992,
+      "pixel_scale": 0.039619999999999995,
+      "science_center_pix": [
+        2064,
+        1152
+      ],
+      "background_box_center_pix": [
+        2064,
+        952
+      ],
+      "science_cutout_path": "/users/tianli/LensModelling/DSPL_LensModel/preprocessed/prep_20260419_bgbox_psfsvi_v2_flat/f814w_lens_cutout_100x100.fits",
+      "source1_mask_cutout_path": "/users/tianli/LensModelling/DSPL_LensModel/preprocessed/prep_20260419_bgbox_psfsvi_v2_flat/f814w_science_100x100_mask_inner.fits",
+      "source2_mask_cutout_path": "/users/tianli/LensModelling/DSPL_LensModel/preprocessed/prep_20260419_bgbox_psfsvi_v2_flat/f475w_science_100x100_mask outer.fits",
+      "psf_cutout_path": "/users/tianli/LensModelling/DSPL_LensModel/preprocessed/prep_20260419_bgbox_psfsvi_v2_flat/f814w_psf_model_svi.fits"
+    }
+  },
+  "parametric_main_mass": {
+    "theta_E": 0.4877347838938706,
+    "gamma": 1.682871953703086,
+    "q": 0.5412478434408865,
+    "gamma1": -0.015231824464949861,
+    "gamma2": 0.06702198253498229,
+    "bands": {
+      "f475w": {
+        "center_x": 0.048069015402323,
+        "center_y": 0.2148162887718048,
+        "phi_rad": -0.4377131331001751,
+        "phi_deg": -25.07911516408809,
+        "source1_sis_center_x": 0.06933499999999998,
+        "source1_sis_center_y": -0.47488726562499994
+      },
+      "f814w": {
+        "center_x": 0.048069015402323,
+        "center_y": 0.2148162887718048,
+        "phi_rad": -0.4377131331001751,
+        "phi_deg": -25.07911516408809,
+        "source1_sis_center_x": 0.06933499999999998,
+        "source1_sis_center_y": -0.47488726562499994
+      }
+    }
+  },
+  "pixelated_main_mass": {
+    "theta_E": 0.4959008217071581,
+    "gamma": 1.7213673483934768,
+    "q": 0.586275267139026,
+    "gamma1": -0.023816556292216212,
+    "gamma2": 0.05947535940034032,
+    "bands": {
+      "f475w": {
+        "center_x": 0.045337068011916615,
+        "center_y": 0.21337271632745647,
+        "phi_rad": -0.5167126692843798,
+        "phi_deg": -29.605455170934047,
+        "source1_sis_center_x": 0.12448633131592504,
+        "source1_sis_center_y": -0.39749838201707177
+      },
+      "f814w": {
+        "center_x": -0.00966814728566917,
+        "center_y": 0.13600274689212777,
+        "phi_rad": -0.5169518584619426,
+        "phi_deg": -29.619159701313603,
+        "source1_sis_center_x": 0.06933499999999998,
+        "source1_sis_center_y": -0.47488726562499983
+      }
+    }
+  }
+}

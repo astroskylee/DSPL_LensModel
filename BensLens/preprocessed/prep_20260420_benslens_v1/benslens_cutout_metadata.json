@@ -1,0 +1,59 @@
+{
+  "cutout_size": 220,
+  "science_cutout_size": [
+    220,
+    220
+  ],
+  "reference_band": "f814w",
+  "reference_center_f814w_pix_input": [
+    2055.0,
+    1151.0
+  ],
+  "reference_center_f814w_pix_integer": [
+    2055,
+    1151
+  ],
+  "mapped_center_f475w_pix_float": [
+    2054.742330292943,
+    1150.8817132029337
+  ],
+  "mapped_center_f475w_pix_integer": [
+    2055,
+    1151
+  ],
+  "reference_center_world_deg": {
+    "ra": 194.32732804334017,
+    "dec": 64.10366120691488
+  },
+  "bands": {
+    "f814w": {
+      "input_path": "/mnt/d/lensing/Herculens/Data/BensLens/ifo612010_drc.fits",
+      "output_cutout_path": "/mnt/d/lensing/Herculens/DSPL_LensModel/BensLens/preprocessed/prep_20260420_benslens_v1/f814w_lens_cutout_220x220.fits",
+      "center_pix_integer": [
+        2055,
+        1151
+      ],
+      "filter": "F814W",
+      "pixel_scale_arcsec": 0.03961999999999973
+    },
+    "f475w": {
+      "input_path": "/mnt/d/lensing/Herculens/Data/BensLens/ifo611010_drc.fits",
+      "output_cutout_path": "/mnt/d/lensing/Herculens/DSPL_LensModel/BensLens/preprocessed/prep_20260420_benslens_v1/f475w_lens_cutout_220x220.fits",
+      "center_pix_float_from_wcs": [
+        2054.742330292943,
+        1150.8817132029337
+      ],
+      "center_pix_integer": [
+        2055,
+        1151
+      ],
+      "filter": "F475W",
+      "pixel_scale_arcsec": 0.03961999999999973
+    }
+  },
+  "notes": [
+    "F475W center is mapped from the F814W reference center through WCS.",
+    "Cutout centers are rounded to integer pixels before extraction.",
+    "No interpolation or resampling is applied."
+  ]
+}

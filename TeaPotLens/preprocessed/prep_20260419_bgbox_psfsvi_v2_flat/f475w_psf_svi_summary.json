@@ -1,0 +1,33 @@
+{
+  "band": "f475w",
+  "selected_psf_ids": [
+    0,
+    1,
+    2,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "base_psf_policy": "brightest_selected_star",
+  "base_psf_id": 0,
+  "base_psf_center_pix": [
+    1673.383372916801,
+    439.82390502784807
+  ],
+  "noise_model": "sigma_tot = sqrt(bg_sigma^2 + max(science-bg,0)/EXPTIME)",
+  "exptime_sec": 2300.0,
+  "background_sigma_scalar": 0.0041264806111375625,
+  "background_level_scalar": 5.1937335229013115e-05,
+  "svi_iterations": 3000,
+  "final_loss": 86699.79659125523,
+  "psf_model_shape": [
+    49,
+    49
+  ],
+  "n_psf_corr": 1.7696846923295646,
+  "rho_psf_corr": 1.4666888662599544,
+  "sigma_psf_corr": 0.05710320218136682,
+  "model_psf_path": "/mnt/d/lensing/Herculens/DSPL_LensModel/preprocessed/prep_20260419_bgbox_psfsvi_v2_flat/f475w_psf_model_svi.fits"
+}

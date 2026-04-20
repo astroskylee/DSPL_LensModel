@@ -1,0 +1,29 @@
+{
+  "band": "f814w",
+  "selected_psf_ids": [
+    1,
+    2,
+    3,
+    0
+  ],
+  "base_psf_policy": "brightest_selected_star",
+  "base_psf_id": 0,
+  "base_psf_center_pix": [
+    1955.6910137259931,
+    3456.5091022148226
+  ],
+  "noise_model": "sigma_tot = sqrt(bg_sigma^2 + max(science-bg,0)/EXPTIME)",
+  "exptime_sec": 2272.0,
+  "background_sigma_scalar": 0.0047319924475102155,
+  "background_level_scalar": 0.0019978664349764585,
+  "svi_iterations": 3000,
+  "final_loss": -29958.847274786087,
+  "psf_model_shape": [
+    49,
+    49
+  ],
+  "n_psf_corr": 1.0128468101867047,
+  "rho_psf_corr": 0.8706587083697326,
+  "sigma_psf_corr": 0.04255672799749301,
+  "model_psf_path": "/mnt/d/lensing/Herculens/DSPL_LensModel/BensLens/preprocessed/prep_20260420_benslens_v1/f814w_psf_model_svi.fits"
+}

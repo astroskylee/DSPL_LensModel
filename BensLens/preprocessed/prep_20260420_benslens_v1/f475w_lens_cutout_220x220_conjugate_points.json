@@ -1,0 +1,32 @@
+{
+  "sourceType": "fits",
+  "fileName": "f475w_lens_cutout_220x220.fits",
+  "mode": "conjugate",
+  "width": 220,
+  "height": 220,
+  "fitsDisplayOrigin": "lower-left visualized in canvas",
+  "conjugatePointsDisplayCoordinates": [
+    {
+      "id": 0,
+      "x": 142.21428571428572,
+      "y": 125.74497767857143
+    },
+    {
+      "id": 1,
+      "x": 102.14285714285714,
+      "y": 104.92354910714286
+    }
+  ],
+  "conjugatePointsFitsCoordinates": [
+    {
+      "id": 0,
+      "x": 142.21428571428572,
+      "y": 94.25502232142857
+    },
+    {
+      "id": 1,
+      "x": 102.14285714285714,
+      "y": 115.07645089285714
+    }
+  ]
+}

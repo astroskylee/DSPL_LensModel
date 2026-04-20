@@ -1,0 +1,88 @@
+{
+  "run_tag": "prep_20260420_benslens_v1",
+  "f814w_center_input_pix": [
+    2055.0,
+    1151.0
+  ],
+  "lens_radec_deg": [
+    194.32732804334017,
+    64.10366120691488
+  ],
+  "f475w_center_from_radec_float": [
+    2054.742330292943,
+    1150.8817132029337
+  ],
+  "science_cutout_size": [
+    220,
+    220
+  ],
+  "background_estimation": {
+    "offset_below_target_pix": 200,
+    "box_size_pix": 50,
+    "min_valid_fraction": 0.9
+  },
+  "cutouts": {
+    "f814w": {
+      "center_pix": [
+        2055,
+        1151
+      ],
+      "bounds": {
+        "x0": 1945,
+        "x1": 2165,
+        "y0": 1041,
+        "y1": 1261,
+        "center_x": 2055,
+        "center_y": 1151
+      },
+      "science_path": "/mnt/d/lensing/Herculens/DSPL_LensModel/BensLens/preprocessed/prep_20260420_benslens_v1/f814w_lens_cutout_220x220.fits",
+      "background_box_path": "/mnt/d/lensing/Herculens/DSPL_LensModel/BensLens/preprocessed/prep_20260420_benslens_v1/f814w_background_box_50x50.fits",
+      "background_box_info": {
+        "center_x": 2055,
+        "center_y": 951,
+        "x0": 2030,
+        "x1": 2080,
+        "y0": 926,
+        "y1": 976,
+        "mean": 0.0019899172174633493,
+        "median": 0.0019978664349764585,
+        "std": 0.0047319924475102155,
+        "valid_fraction": 1.0
+      },
+      "background_sigma_scalar": 0.0047319924475102155,
+      "background_level_scalar": 0.0019978664349764585,
+      "exptime_sec": 2272.0
+    },
+    "f475w": {
+      "center_pix": [
+        2055,
+        1151
+      ],
+      "bounds": {
+        "x0": 1945,
+        "x1": 2165,
+        "y0": 1041,
+        "y1": 1261,
+        "center_x": 2055,
+        "center_y": 1151
+      },
+      "science_path": "/mnt/d/lensing/Herculens/DSPL_LensModel/BensLens/preprocessed/prep_20260420_benslens_v1/f475w_lens_cutout_220x220.fits",
+      "background_box_path": "/mnt/d/lensing/Herculens/DSPL_LensModel/BensLens/preprocessed/prep_20260420_benslens_v1/f475w_background_box_50x50.fits",
+      "background_box_info": {
+        "center_x": 2055,
+        "center_y": 951,
+        "x0": 2030,
+        "x1": 2080,
+        "y0": 926,
+        "y1": 976,
+        "mean": 0.0016846413525024846,
+        "median": 0.0015512200188823044,
+        "std": 0.004451620042935406,
+        "valid_fraction": 1.0
+      },
+      "background_sigma_scalar": 0.004451620042935406,
+      "background_level_scalar": 0.0015512200188823044,
+      "exptime_sec": 2272.0
+    }
+  }
+}
