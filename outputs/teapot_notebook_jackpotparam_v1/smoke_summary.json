@@ -1,0 +1,243 @@
+{
+  "cutout_size": [
+    100,
+    100
+  ],
+  "psf_cutout_size": [
+    49,
+    49
+  ],
+  "pixel_grid_shape": 50,
+  "priors": {
+    "theta_E_main": {
+      "low": 0.01,
+      "high": 2.03
+    },
+    "gamma_main": {
+      "low": 1.6,
+      "high": 2.4
+    },
+    "q_main": {
+      "low": 0.5,
+      "high": 1
+    },
+    "gamma_shear_main": {
+      "low": -0.15,
+      "high": 0.15
+    },
+    "center_main": {
+      "low": -0.4,
+      "high": 0.4
+    },
+    "phi_main": {
+      "low": -1.5707963267948966,
+      "high": 1.5707963267948966
+    },
+    "theta_E_source1": {
+      "low": 0.0,
+      "high": 0.3
+    },
+    "eta": {
+      "low": 1.0,
+      "high": 1.5
+    }
+  },
+  "eta_parametric": 1.2030088939867618,
+  "eta_pixelated": 1.4687181909079288,
+  "parametric_loss_final": -77194.92831298705,
+  "pixelated_loss_final": -77744.55605804996,
+  "reference_band": "f814w",
+  "trace_conjugate_groups": {
+    "source1": [
+      3,
+      4
+    ],
+    "source2": [
+      1,
+      2,
+      8
+    ]
+  },
+  "use_trace_point_conjugate_prior": false,
+  "conjugate_prior_rate": 1000.0,
+  "conjugate_json_path": "/users/tianli/LensModelling/DSPL_LensModel/preprocessed/prep_20260419_bgbox_psfsvi_v2_flat/f814w_lens_cutout_100x100_conjugate_points.json",
+  "trace_point_json_path": "/users/tianli/LensModelling/DSPL_LensModel/preprocessed/prep_20260419_bgbox_psfsvi_v2_flat/f814w_lens_cutout_100x100_trace_points.json",
+  "conjugate_centroid_fits_xy": [
+    51.25,
+    62.486049107142854
+  ],
+  "conjugate_centroid_model_arcsec_by_band": {
+    "f475w": [
+      0.040903048267415636,
+      0.4999174534819148
+    ],
+    "f814w": [
+      0.069335,
+      0.5145072656249998
+    ]
+  },
+  "trace_points_model_arcsec_by_band": {
+    "f475w": [
+      [
+        0.8839719904738317,
+        0.44443748714566456
+      ],
+      [
+        0.5377602244179862,
+        0.8061224090870611
+      ],
+      [
+        0.42235578238247745,
+        0.14594747927319224
+      ],
+      [
+        0.054922502286985496,
+        0.5072477353463218
+      ],
+      [
+        -0.29186704250234424,
+        -0.2703399274991365
+      ],
+      [
+        -0.5327622006407027,
+        -0.2534779602775997
+      ],
+      [
+        -0.624615503061515,
+        -0.6514079961616644
+      ],
+      [
+        -1.4238309758449694,
+        -0.6729709160063272
+      ]
+    ],
+    "f814w": [
+      [
+        0.9112599999999998,
+        0.44375726562499984
+      ],
+      [
+        0.5716600000000001,
+        0.8116572656250001
+      ],
+      [
+        0.44431,
+        0.15368226562499998
+      ],
+      [
+        0.08348500000000016,
+        0.5215822656249999
+      ],
+      [
+        -0.27734,
+        -0.24959273437500004
+      ],
+      [
+        -0.5178899999999999,
+        -0.2283677343750001
+      ],
+      [
+        -0.6169399999999998,
+        -0.6245677343749998
+      ],
+      [
+        -1.4164149999999998,
+        -0.6316427343749998
+      ]
+    ]
+  },
+  "wcs_relative_geometry_from_reference_band": {
+    "f475w": {
+      "delta_x_arcsec": -0.01909602297111845,
+      "delta_y_arcsec": -0.01576188506016447,
+      "delta_phi_rad": 0.018124238115925253,
+      "delta_phi_deg": 1.038442350932656
+    }
+  },
+  "bands": {
+    "f475w": {
+      "filter": "F475W",
+      "rms": 0.0041264806111375625,
+      "pixel_scale": 0.03961999999999997,
+      "science_center_pix": [
+        2063,
+        1151
+      ],
+      "background_box_center_pix": [
+        2063,
+        951
+      ],
+      "science_cutout_path": "/users/tianli/LensModelling/DSPL_LensModel/preprocessed/prep_20260419_bgbox_psfsvi_v2_flat/f475w_lens_cutout_100x100.fits",
+      "source1_mask_cutout_path": "/users/tianli/LensModelling/DSPL_LensModel/preprocessed/prep_20260419_bgbox_psfsvi_v2_flat/f814w_science_100x100_mask_inner.fits",
+      "source2_mask_cutout_path": "/users/tianli/LensModelling/DSPL_LensModel/preprocessed/prep_20260419_bgbox_psfsvi_v2_flat/f475w_science_100x100_mask outer.fits",
+      "psf_cutout_path": "/users/tianli/LensModelling/DSPL_LensModel/preprocessed/prep_20260419_bgbox_psfsvi_v2_flat/f475w_psf_model_svi.fits"
+    },
+    "f814w": {
+      "filter": "F814W",
+      "rms": 0.004453595749110992,
+      "pixel_scale": 0.039619999999999995,
+      "science_center_pix": [
+        2064,
+        1152
+      ],
+      "background_box_center_pix": [
+        2064,
+        952
+      ],
+      "science_cutout_path": "/users/tianli/LensModelling/DSPL_LensModel/preprocessed/prep_20260419_bgbox_psfsvi_v2_flat/f814w_lens_cutout_100x100.fits",
+      "source1_mask_cutout_path": "/users/tianli/LensModelling/DSPL_LensModel/preprocessed/prep_20260419_bgbox_psfsvi_v2_flat/f814w_science_100x100_mask_inner.fits",
+      "source2_mask_cutout_path": "/users/tianli/LensModelling/DSPL_LensModel/preprocessed/prep_20260419_bgbox_psfsvi_v2_flat/f475w_science_100x100_mask outer.fits",
+      "psf_cutout_path": "/users/tianli/LensModelling/DSPL_LensModel/preprocessed/prep_20260419_bgbox_psfsvi_v2_flat/f814w_psf_model_svi.fits"
+    }
+  },
+  "parametric_main_mass": {
+    "theta_E": 0.2914771939589492,
+    "gamma": 2.0302096401093976,
+    "q": 0.9932738476033527,
+    "gamma1": -0.0031433742975563173,
+    "gamma2": -0.06078196509385084,
+    "bands": {
+      "f475w": {
+        "center_x": -0.01807847278793196,
+        "center_y": 0.027482273079704772,
+        "phi_rad": -0.8607666560269759,
+        "phi_deg": -49.31829653593478,
+        "source1_sis_center_x": 0.033502286480085346,
+        "source1_sis_center_y": 0.21813622180717906
+      },
+      "f814w": {
+        "center_x": 0.001801107535332247,
+        "center_y": 0.043218614417926404,
+        "phi_rad": -0.8788908935486668,
+        "phi_deg": -50.35673885282032,
+        "source1_sis_center_x": 0.056828663432290025,
+        "source1_sis_center_y": 0.23290643940623512
+      }
+    }
+  },
+  "pixelated_main_mass": {
+    "theta_E": 0.3453799707643355,
+    "gamma": 2.3696360186198095,
+    "q": 0.9888113841893703,
+    "gamma1": 0.022388675540075897,
+    "gamma2": 0.006737632527506171,
+    "bands": {
+      "f475w": {
+        "center_x": -0.07177089724118663,
+        "center_y": -0.0470286658178591,
+        "phi_rad": -0.04201413650979481,
+        "phi_deg": -2.4072327018977457,
+        "source1_sis_center_x": -0.02386950579794334,
+        "source1_sis_center_y": 0.22766550415843864
+      },
+      "f814w": {
+        "center_x": -0.05323287850220593,
+        "center_y": -0.030307005812239995,
+        "phi_rad": -0.060138374610605894,
+        "phi_deg": -3.4456750519644235,
+        "source1_sis_center_x": -0.00036100461023609587,
+        "source1_sis_center_y": 0.24347391976752492
+      }
+    }
+  }
+}
